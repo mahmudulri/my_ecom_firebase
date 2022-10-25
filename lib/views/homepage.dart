@@ -12,13 +12,10 @@ class Homepage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text("Home Screen"),
-          Container(
-            color: Colors.green,
-            child: Text(
-              "You are now Logged In",
-              style: TextStyle(
-                fontSize: 25,
-              ),
+          Text(
+            "You are now Logged In",
+            style: TextStyle(
+              fontSize: 25,
             ),
           ),
         ],
