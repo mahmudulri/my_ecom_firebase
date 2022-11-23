@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:my_ecom_firebase/const/app_colors.dart';
 import 'package:my_ecom_firebase/ui/route/route.dart';
+import 'package:my_ecom_firebase/views/authpages/user_form.dart';
 import 'package:my_ecom_firebase/views/homepage.dart';
 import 'package:my_ecom_firebase/views/sign_in.dart';
 import 'package:my_ecom_firebase/views/sign_up.dart';
@@ -34,8 +35,8 @@ class MyApp extends StatelessWidget {
           ),
           scaffoldBackgroundColor: AppColors.scaffoldColor,
         ),
-        initialRoute: splash,
+        initialRoute: userForm,
         getPages: getPages,
-        home: SplashScreen());
+        home: UserForm());
   }
 }
