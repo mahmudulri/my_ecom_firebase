@@ -131,7 +131,7 @@ class SignInScreen extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Get.to(SignUpScreen());
+                    Get.to(SignUpScreen2());
                   },
                   child: Text(
                     "Sign Up now",

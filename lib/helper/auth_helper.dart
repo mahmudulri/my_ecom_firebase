@@ -57,7 +57,7 @@ class AuthHelper {
 
       if (authCredential!.uid.isNotEmpty) {
         Navigator.push(
-            context, CupertinoPageRoute(builder: (_) => SignUpScreen()));
+            context, CupertinoPageRoute(builder: (_) => SignUpScreen2()));
       } else {
         print("Sign up failed");
       }

@@ -21,70 +21,72 @@ class SignUpScreen extends StatelessWidget {
           left: 20,
           right: 20,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: screenHeight * 0.050,
-            ),
-            Text(
-              "Travel Story by PTVL",
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.black,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: screenHeight * 0.050,
               ),
-            ),
-            Text(
-              "Create\nYour Account",
-              style: TextStyle(
-                color: Color(0xff8000FF),
-                fontSize: screenWidth * 0.090,
-              ),
-            ),
-            Text("Create your account and start your journey"),
-            SizedBox(
-              height: 60,
-            ),
-            TextFormField(
-              controller: _emailController,
-              decoration: AppStyles().textFieldDecoration("E-mail Address"),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            TextFormField(
-              controller: _passwordController,
-              decoration: AppStyles().textFieldDecoration("Password"),
-            ),
-            SizedBox(
-              height: screenHeight * 0.100,
-            ),
-            VioletButton("Create New Account"),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Already Registered ?"),
-                SizedBox(
-                  width: 10,
+              Text(
+                "Travel Story by PTVL",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
                 ),
-                InkWell(
-                    onTap: () {
-                      Get.toNamed(signInScreen);
-                    },
-                    child: Text(
-                      "Log in Now",
-                      style: TextStyle(
-                        color: Colors.green,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
-              ],
-            ),
-          ],
+              ),
+              Text(
+                "Create\nYour Account",
+                style: TextStyle(
+                  color: Color(0xff8000FF),
+                  fontSize: screenWidth * 0.090,
+                ),
+              ),
+              Text("Create your account and start your journey"),
+              SizedBox(
+                height: 60,
+              ),
+              TextFormField(
+                controller: _emailController,
+                decoration: AppStyles().textFieldDecoration("E-mail Address"),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextFormField(
+                controller: _passwordController,
+                decoration: AppStyles().textFieldDecoration("Password"),
+              ),
+              SizedBox(
+                height: screenHeight * 0.100,
+              ),
+              VioletButton("Create New Account"),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Already Registered ?"),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  InkWell(
+                      onTap: () {
+                        Get.toNamed(signInScreen);
+                      },
+                      child: Text(
+                        "Log in Now",
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     ));

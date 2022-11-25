@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:my_ecom_firebase/helper/auth_helper.dart';
 import 'package:my_ecom_firebase/views/sign_in.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen2 extends StatelessWidget {
   TextEditingController _email = TextEditingController();
   TextEditingController _passWord = TextEditingController();
 
@@ -23,7 +23,7 @@ class SignUpScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:my_ecom_firebase/const/app_colors.dart';
 import 'package:my_ecom_firebase/ui/route/route.dart';
+import 'package:my_ecom_firebase/views/authpages/sign_up_screen.dart';
 import 'package:my_ecom_firebase/views/authpages/user_form.dart';
 import 'package:my_ecom_firebase/views/homepage.dart';
 import 'package:my_ecom_firebase/views/sign_in.dart';
