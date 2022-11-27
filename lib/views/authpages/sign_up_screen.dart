@@ -60,7 +60,7 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(
                 height: screenHeight * 0.100,
               ),
-              VioletButton("Create New Account"),
+              VioletButton("Continuee", () => Get.toNamed(userForm), false.obs),
               SizedBox(
                 height: 20,
               ),

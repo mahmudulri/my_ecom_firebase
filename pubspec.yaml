@@ -41,9 +41,12 @@ dependencies:
   firebase_auth: ^4.0.2 
   get: ^4.6.5
   fluttertoast: ^8.1.1
+  cloud_firestore:
   get_storage: ^2.0.3
   lottie: ^1.4.3
   dots_indicator: ^2.1.0
+  toggle_switch: ^2.0.1
+  
 
 dev_dependencies:
   flutter_test:

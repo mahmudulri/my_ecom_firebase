@@ -7,16 +7,20 @@ import 'package:flutter/material.dart';
 
 class VioletButton extends StatelessWidget {
   String buttonName;
-  VioletButton(this.buttonName);
+  final Function onAction;
+  VioletButton(this.buttonName, this.onAction, this._value);
   RxBool _value = false.obs;
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Obx((() => InkWell(
-          onTap: () {
+          onTap: () async {
             _value.value = true;
-            print(_value.toString());
+            await Future.delayed(Duration(seconds: 1));
+
+            onAction();
+            _value.value = false;
           },
           child: Container(
             height: 45,

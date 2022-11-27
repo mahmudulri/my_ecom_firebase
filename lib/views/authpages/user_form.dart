@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:get/get.dart';
+import 'package:my_ecom_firebase/business_logic/form.dart';
+import 'package:my_ecom_firebase/const/app_colors.dart';
 import 'package:my_ecom_firebase/ui/route/route.dart';
 import 'package:my_ecom_firebase/ui/styles/styles.dart';
 import 'package:my_ecom_firebase/ui/widgets/violetButton.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
 class UserForm extends StatelessWidget {
   TextEditingController _nameController = TextEditingController();
@@ -12,6 +14,9 @@ class UserForm extends StatelessWidget {
   TextEditingController _addressController = TextEditingController();
 
   Rx<TextEditingController> _dobController = TextEditingController().obs;
+
+  String? dob;
+  String gender = "Male";
   Rx<DateTime> selectedDate = DateTime.now().obs;
 
   _selectDate(BuildContext context) async {
@@ -24,6 +29,7 @@ class UserForm extends StatelessWidget {
     if (selected != null && selected != selectedDate) {
       _dobController.value.text =
           "${selected.day} - ${selected.month}-${selected.year}";
+      _dobController.value.text = dob!;
     }
   }
 
@@ -60,21 +66,62 @@ class UserForm extends StatelessWidget {
               mytextfield(
                   _phoneController, TextInputType.number, "Phone Number"),
               mytextfield(_addressController, TextInputType.text, "Address"),
-              Obx(() => TextFormField(
-                    controller: _dobController.value,
-                    readOnly: true,
-                    decoration: InputDecoration(
-                        hintText: "date of birth",
-                        suffixIcon: IconButton(
-                            onPressed: () => _selectDate(context),
-                            icon: Icon(
-                              Icons.calendar_month,
-                            ))),
-                  )),
-              SizedBox(
-                height: screenHeight * 0.100,
+              Obx(
+                () => TextFormField(
+                  controller: _dobController.value,
+                  readOnly: true,
+                  decoration: InputDecoration(
+                      hintText: "date of birth",
+                      suffixIcon: IconButton(
+                          onPressed: () => _selectDate(context),
+                          icon: Icon(
+                            Icons.calendar_month,
+                          ))),
+                ),
               ),
-              VioletButton("Create New Account"),
+              SizedBox(
+                height: screenHeight * 0.040,
+              ),
+              // Here, default theme colors are used for activeBgColor, activeFgColor, inactiveBgColor and inactiveFgColor
+              ToggleSwitch(
+                minWidth: 90.0,
+                fontSize: 16.0,
+                initialLabelIndex: 1,
+                activeBgColor: [AppColors.violetColor],
+                activeFgColor: Colors.white,
+                inactiveBgColor: Colors.grey,
+                inactiveFgColor: Colors.grey[900],
+                totalSwitches: 2,
+                labels: [
+                  'Male',
+                  'Female',
+                ],
+                onToggle: (index) {
+                  if (index == 0) {
+                    gender = "Male";
+                  } else {
+                    gender = "Female";
+                  }
+
+                  print('switched to: $index');
+                },
+              ),
+              SizedBox(
+                height: screenHeight * 0.050,
+              ),
+
+              ElevatedButton(
+                  onPressed: () {
+                    UsersInfo().sendFormDataToDB(
+                        _nameController.text,
+                        int.parse(_phoneController.text),
+                        _addressController.text,
+                        dob!,
+                        gender,
+                        false.obs);
+                  },
+                  child: Text("Submit")),
+
               SizedBox(
                 height: 20,
               ),
