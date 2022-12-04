@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:my_ecom_firebase/business_logic/auth.dart';
+import 'package:my_ecom_firebase/helper/auth_helper.dart';
 import 'package:my_ecom_firebase/ui/route/route.dart';
 import 'package:my_ecom_firebase/ui/styles/styles.dart';
 import 'package:my_ecom_firebase/ui/widgets/violetButton.dart';
@@ -60,7 +62,11 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(
                 height: screenHeight * 0.100,
               ),
-              VioletButton("Continuee", () => Get.toNamed(userForm), false.obs),
+              VioletButton(
+                  "Create Account",
+                  () => Auth().registration(
+                      _emailController.text, _passwordController.text, context),
+                  false.obs),
               SizedBox(
                 height: 20,
               ),

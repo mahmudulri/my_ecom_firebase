@@ -27,9 +27,10 @@ class UserForm extends StatelessWidget {
         lastDate: DateTime(2300));
 
     if (selected != null && selected != selectedDate) {
-      _dobController.value.text =
-          "${selected.day} - ${selected.month}-${selected.year}";
+      dob = "${selected.day} - ${selected.month}-${selected.year}";
       _dobController.value.text = dob!;
+
+      // dob = _dobController.value.text.toString();
     }
   }
 
@@ -110,17 +111,30 @@ class UserForm extends StatelessWidget {
                 height: screenHeight * 0.050,
               ),
 
-              ElevatedButton(
-                  onPressed: () {
-                    UsersInfo().sendFormDataToDB(
+              VioletButton(
+                  "Submit",
+                  () => UsersInfo().sendFormDataToDB(
                         _nameController.text,
-                        int.parse(_phoneController.text),
+                        int.parse(_phoneController.text.toString()),
                         _addressController.text,
                         dob!,
                         gender,
-                        false.obs);
-                  },
-                  child: Text("Submit")),
+                        false.obs,
+                      ),
+                  false.obs),
+
+              // ElevatedButton(
+              //     onPressed: () {
+              //       Get.toNamed(privacyPolicy);
+              //       // UsersInfo().sendFormDataToDB(
+              //       //     _nameController.text,
+              //       //     int.parse(_phoneController.text),
+              //       //     _addressController.text,
+              //       //     dob!,
+              //       //     gender,
+              //       //     false.obs);
+              //     },
+              //     child: Text("Submit")),
 
               SizedBox(
                 height: 20,
