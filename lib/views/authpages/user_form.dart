@@ -27,7 +27,7 @@ class UserForm extends StatelessWidget {
         lastDate: DateTime(2300));
 
     if (selected != null && selected != selectedDate) {
-      dob = "${selected.day} - ${selected.month}-${selected.year}";
+      dob = "${selected.day}-${selected.month}-${selected.year}";
       _dobController.value.text = dob!;
 
       // dob = _dobController.value.text.toString();
@@ -112,16 +112,16 @@ class UserForm extends StatelessWidget {
               ),
 
               VioletButton(
-                  "Submit",
-                  () => UsersInfo().sendFormDataToDB(
-                        _nameController.text,
-                        int.parse(_phoneController.text.toString()),
-                        _addressController.text,
-                        dob!,
-                        gender,
-                        false.obs,
-                      ),
-                  false.obs),
+                "Submit",
+                () => UsersInfo().sendFormDataToDB(
+                  _nameController.text,
+                  int.parse(_phoneController.text.toString()),
+                  _addressController.text,
+                  dob!,
+                  gender,
+                  false.obs,
+                ),
+              ),
 
               // ElevatedButton(
               //     onPressed: () {

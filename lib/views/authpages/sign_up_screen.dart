@@ -63,10 +63,10 @@ class SignUpScreen extends StatelessWidget {
                 height: screenHeight * 0.100,
               ),
               VioletButton(
-                  "Create Account",
-                  () => Auth().registration(
-                      _emailController.text, _passwordController.text, context),
-                  false.obs),
+                "Create Account",
+                () => Auth().registration(
+                    _emailController.text, _passwordController.text, context),
+              ),
               SizedBox(
                 height: 20,
               ),

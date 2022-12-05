@@ -8,7 +8,10 @@ import 'package:flutter/material.dart';
 class VioletButton extends StatelessWidget {
   String buttonName;
   final Function onAction;
-  VioletButton(this.buttonName, this.onAction, this._value);
+  VioletButton(
+    this.buttonName,
+    this.onAction,
+  );
   RxBool _value = false.obs;
   @override
   Widget build(BuildContext context) {

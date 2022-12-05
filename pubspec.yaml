@@ -46,6 +46,7 @@ dependencies:
   lottie: ^1.4.3
   dots_indicator: ^2.1.0
   toggle_switch: ^2.0.1
+  syncfusion_flutter_pdfviewer: ^20.3.59
   
 
 dev_dependencies:
