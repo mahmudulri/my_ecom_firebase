@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Get.toNamed(onboarding);
       // Navigator.push(context, CupertinoPageRoute(builder: (_) => Homepage()));
     } else {
-      Get.toNamed(bottomNavController);
+      Get.toNamed(mainHomeScreen);
       // Navigator.push(
       //     context, CupertinoPageRoute(builder: (_) => SignInScreen()));
     }

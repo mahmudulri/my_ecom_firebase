@@ -33,7 +33,7 @@ class PrivacyPolicy extends StatelessWidget {
               //         )
               //       : Text('Still Loading'),
               // ),
-              VioletButton("agree", () => Get.toNamed(bottomNavController)),
+              VioletButton("agree", () => Get.toNamed(mainHomeScreen)),
               SizedBox(
                 height: 10,
               ),

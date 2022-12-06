@@ -3,6 +3,8 @@ import 'package:my_ecom_firebase/views/authpages/sign_in_screen.dart';
 import 'package:my_ecom_firebase/views/authpages/sign_up_screen.dart';
 import 'package:my_ecom_firebase/views/authpages/user_form.dart';
 import 'package:my_ecom_firebase/views/botttom_nav_controller/bottom_nav_controller.dart';
+import 'package:my_ecom_firebase/views/drawer_screen.dart';
+import 'package:my_ecom_firebase/views/main_home_screen.dart';
 import 'package:my_ecom_firebase/views/onboarding_screen.dart';
 import 'package:my_ecom_firebase/views/privacy_policy.dart';
 
@@ -14,7 +16,9 @@ const String signupscreen = '/signup-screen';
 const String signInScreen = '/signin-screen';
 const String userForm = '/user-form';
 const String privacyPolicy = '/privacy-policy';
+const String mainHomeScreen = '/main-home-screen';
 const String bottomNavController = '/bottom-nav-controller';
+const String drawerScreen = '/drawer-screen';
 
 List<GetPage> getPages = [
   GetPage(
@@ -42,7 +46,15 @@ List<GetPage> getPages = [
     page: () => PrivacyPolicy(),
   ),
   GetPage(
+    name: mainHomeScreen,
+    page: () => MainHomeScreen(),
+  ),
+  GetPage(
     name: bottomNavController,
     page: () => BottomNavController(),
+  ),
+  GetPage(
+    name: drawerScreen,
+    page: () => DrawerScreen(),
   ),
 ];
