@@ -8,7 +8,7 @@ class MainHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.blueGrey,
       body: Stack(
         children: [
           DrawerScreen(),

@@ -21,7 +21,7 @@ class BottomNavController extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() => AnimatedPositioned(
-          duration: Duration(milliseconds: 999),
+          duration: Duration(seconds: 1),
           top: _drawer == false ? 0 : 100,
           bottom: _drawer == false ? 0 : 100,
           left: _drawer == false ? 0 : 200,
@@ -51,7 +51,7 @@ class BottomNavController extends StatelessWidget {
                         ),
                       ),
                 title: Text(
-                  "appbar",
+                  "PTVL Travel Story",
                   style: TextStyle(
                     color: Colors.black,
                   ),
